@@ -1,6 +1,19 @@
+# DemoDB
+
+About the project
+-----------------
+
+DemoDB is a single-user database management system written in C++ that supports a subset of SQL and some basic relational algebra operations (select, join, groupby, etc). The database was tested with the standards of TPC-H data sample, and the sample input tables (.tbl format). It is available here - https://github.com/electrum/tpch-dbgen.
+Additionally, the database supports 2 types of storage - HEAP and SORTED that needs to be specified while creating the tables.
+
+How to test
+-----------
+
 1. Configure test.cat to include all the table paths
-2. Execute ./a4-2.out and enter the desired query.
-3. Below are some test queries that can be entered:
+2. Compile using 'make' command
+3. Execute ./a4-2.out and enter the desired query.
+4. Below are some test queries that can be entered:
+
 CREATE TABLE supplier (s_suppkey INTEGER,s_name STRING,s_address STRING,s_nationkey INTEGER,s_phone STRING,s_acctbal DOUBLE,s_comment STRING) AS SORTED ON s_suppkey
 
 CREATE TABLE partsupp (ps_partkey INTEGER,ps_suppkey INTEGER,ps_availqty INTEGER,ps_supplycost DOUBLE,ps_comment STRING) AS SORTED ON ps_partkey
